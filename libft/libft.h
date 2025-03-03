@@ -53,12 +53,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 typedef struct s_list
 {
-	void			*content;
+	int		content;
+	int		index;
 	struct s_list	*next;
 }	t_list;
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content, int index);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
