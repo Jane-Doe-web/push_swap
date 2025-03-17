@@ -38,14 +38,13 @@ int	ft_atoi(const char *nptr)
 	}
 	return (number * sign);
 }
-/*
+
 #include <stdlib.h>
 #include <stdio.h>
 
 int	main()
 {
-	printf("%d", ft_atoi("00000000001"));
+	printf("%d", ft_atoi(""));
 	printf("%d", atoi("0000000001"));
 	
 }
-*/

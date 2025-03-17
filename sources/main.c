@@ -81,31 +81,37 @@ long	ft_atol(const char *nptr, t_list **a, char **args, int flag)
 void    init_stack_a(t_list **a, char**args, int flag)
 {
     int i;
-    t_list *temp;
     t_list *new;
 
     i = 0;
     *a = ft_lstnew(ft_atol(args[i], a, args, flag), -1);  
-    temp = *a;
+    i++;
     while (args[i])
     {
         new = ft_lstnew(ft_atol(args[i], a, args, flag), -1);
-        ft_lstadd_back(&temp, new);
-        temp = new;
+        ft_lstadd_back(a, new);
         i++;
     }
 }
+//testing function
+/*void    print_stack(t_list *a)
+{
+    while (a)
+    {
+        ft_printf("%d ", a->nbr);
+        a = a->next;
+    }
+    ft_printf("\n");
+}*/
 
 int main(int argc, char *argv[])
 {
     t_list *a;
-  //  t_list *b;
     char    **args;
     int     flag;
 
     flag = 0;
     a = NULL;
- //   b = NULL;
     if (argc == 1 || (argc == 2 && !argv[1][0]))
         return (1);
     if (argc == 2)
@@ -120,11 +126,13 @@ int main(int argc, char *argv[])
     init_stack_a(&a, args, flag);
     if (flag)
         free_args(args);
-    if (stack_sorted(&a))
+    if (stack_sorted(&a) || ft_lstsize(a) == 1)
     {
-        free_stack_nodes(&a);
+        ft_lstclear(&a);
         return (0);
     }
     push_swap(&a);
-    free_stack_nodes(&a);
+//    print_stack(a);
+    ft_lstclear(&a);
 }
+

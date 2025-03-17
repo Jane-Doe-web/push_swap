@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -I. -I$(SOURCES_DIR) -I$(LIBFT_DIR)
 LIBFT_DIR = libft
 SOURCES_DIR = sources
 
-SRCS = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/cleaning.c
+SRCS = $(SOURCES_DIR)/main.c $(SOURCES_DIR)/cleaning.c $(SOURCES_DIR)/swap_and_push.c $(SOURCES_DIR)/sorting.c $(SOURCES_DIR)/rotate.c $(SOURCES_DIR)/radix_sort.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = $(LIBFT_DIR)/libft.a
