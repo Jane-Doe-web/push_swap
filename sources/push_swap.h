@@ -22,6 +22,7 @@ int		stack_sorted(t_list **a);
 int		count_number_bits(t_list **a);
 void	free_args(char **args);
 void	error_handler(char *str, char **args, int need_to_free);
+void	clear_and_exit(t_list **a);
 void	free_stack_nodes(t_list **a);
 void	init_stack_a(t_list **a, char**args, int flag);
 void	check_doubles(char **args, int flag);

@@ -24,7 +24,7 @@ int	stack_sorted(t_list **a)
 			return (0);
 		temp = temp->next;
 	}
-	return (1); 
+	return (1);
 }
 
 void	swap_a(t_list **x)

@@ -39,7 +39,7 @@ void	reverse_rotate(t_list **x)
 	temp = second_last->next;
 	second_last->next = NULL;
 	ft_lstadd_front(x, temp);
-	ft_printf("rra\n"); 
+	ft_printf("rra\n");
 }
 
 long	find_min(t_list **a)

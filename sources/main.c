@@ -44,6 +44,11 @@ int	check_if_digit(char **arr, int need_to_free)
 	int	i;
 	int	j;
 
+	if (arr[0] == NULL)
+	{
+		free_args(arr);
+		exit(1);
+	}
 	i = 0;
 	while (arr[i])
 	{
@@ -140,10 +145,7 @@ int	main(int argc, char *argv[])
 	if (flag)
 		free_args(args);
 	if (stack_sorted(&a) || ft_lstsize(a) == 1)
-	{
-		ft_lstclear(&a);
-		return (0);
-	}
+		clear_and_exit(&a);
 	push_swap(&a);
 	ft_lstclear(&a);
 }

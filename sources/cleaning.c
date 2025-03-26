@@ -35,3 +35,9 @@ void	free_stack_nodes(t_list **a)
 	ft_lstclear(a);
 	exit (1);
 }
+
+void	clear_and_exit(t_list **a)
+{
+	ft_lstclear(a);
+	exit (1);
+}
